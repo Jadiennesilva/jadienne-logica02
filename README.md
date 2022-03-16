@@ -179,49 +179,43 @@ printf ("O nÃºmero Ã© positivo ");
 
 (6) Respostas 
 
-#include <stdio.h>
-#include <conio.h>
-float calc_media()
-{
-    float soma, num, media, i;
-
-    soma = 0;
-    i = 0;
-    num = 1;
-
-    while(num != 0)
-    {
-        printf("\nDigite um numero positivo\n");
-        scanf("%f", &num);
-
-        while(num < 0)
-        {
-            printf("\nNumero invalidao!");
-            printf("\nDigite um numero positivo novamente");
-            scanf("%f", &num);
-        }
-
-        soma += num;
-
-        i++;
-    }
-
-    media = soma/(i-1);
-
-    return media;
-}
-int main()
-{
-    float r;
-
-    r = calc_media();
-
-    printf("O valor da media aritmetica foi %.2f",r);
-
-    getchar();
-}
-
-
+ #include <stdio.h> 
+ #include <stdlib.h> 
+ #include <locale.h> 
+  
+ float pesoideal(float altura, char sexo); 
+  
+ int main() { 
+   setlocale(LC_ALL, "Portuguese_Brazil"); 
+    
+   float A; 
+   char S; 
+    
+  printf("Digite o seu sexo; M ou F: "); 
+  scanf("%c", &S); 
+    
+   printf("Digite a sua altura: "); 
+   scanf("%f", &A); 
+    
+   pesoideal(A, S); 
+    
+    
+ } 
+  
+ float pesoideal(float altura, char sexo) { 
+   float peso; 
+    
+   if(sexo == 'M') { 
+     peso = 72.7 * altura - 58; 
+     printf("\nO seu peso ideal é: %2.2f kg", peso); 
+   } else if(sexo == 'F') { 
+     peso = 62.1 * altura - 44.7; 
+     printf("\nO seu peso ideal é: %2.2f kg", peso); 
+   } 
+    
+   return peso; 
+ }
+ 
 (7) Respostas 
 
 #include <stdio.h>
@@ -265,6 +259,40 @@ int main()
 
     getchar();
 }
+
+
+(9) respostas
+
+#include <stdio.h> 
+ #include <stdlib.h> 
+ #include <locale.h> 
+  
+ int soma(int n); 
+  
+ int main() { 
+   setlocale(LC_ALL, "Portuguese_Brazil"); 
+    
+   int numero, resultado; 
+    
+   printf("Digite um número inteiro e positivo: "); 
+   scanf("%d", &numero); 
+    
+   resultado = soma(numero); 
+    
+   printf("\nA soma dos divisores do número é: %d", resultado); 
+ } 
+  
+ int soma(int n) { 
+   int divisores, soma = 0;  
+    
+   for(divisores = 1; divisores <= n; divisores++) { 
+     if(n % divisores == 0) { 
+       soma = soma + divisores;  
+     } 
+   } 
+    
+   return soma; 
+ }
 
 
 (24) Respostas
